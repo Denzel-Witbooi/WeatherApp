@@ -13,13 +13,13 @@ import java.util.Scanner;
 public class NetworkUtil
 {
     private static final String BASE_URL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/305605";
-    private static final String API_KEY = "\tQLu3p2SKVfqwnfU9jRHTPRpuWOwiEuGI";
+    private static final String API_KEY = "\tcGFzAxLs8GNaTwO7AX77rPUyFnXgwphd";
     private static final String PARAM_API_KEY = "apikey";
     private static final String METRIC_PARAM = "metric";
     private static final String METRIC_VALUE = "true";
     private static final String TAG = "NETWORK_UTIL";
 
-    public static URL buildURL()
+    public static URL buildURLForWeather()
     {
         Uri uri = Uri.parse(BASE_URL)
                 .buildUpon()
@@ -38,7 +38,7 @@ public class NetworkUtil
         return url;
     }
 
-    public static String getResponse(URL url) throws IOException {
+    public static String getResponseFromHttpUrl(URL url) throws IOException {
 
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
@@ -66,4 +66,5 @@ public class NetworkUtil
             httpURLConnection.disconnect();
         }
     }
+
 }
