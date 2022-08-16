@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "NETWORK UTIL IN MAIN";
     Fragment weatherFragment;
-    Fragment tideFragment;
+    Fragment hourlyForecastFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +19,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         weatherFragment = new WeatherFragment();
-        tideFragment = new TideFragment();
+        hourlyForecastFragment = new HourlyForecastFragment();
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.weather_fragment_container, weatherFragment);
-        transaction.replace(R.id.tide_fragment_container, tideFragment);
+        transaction.replace(R.id.hourly_forecast_fragment_container, hourlyForecastFragment);
         transaction.commit();
     }
 }

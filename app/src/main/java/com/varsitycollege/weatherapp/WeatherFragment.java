@@ -29,6 +29,7 @@ public class WeatherFragment extends Fragment {
     private TextView testTextView;
     ListView listView;
     CardView cardView;
+
     private String BASE_URL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/305605";
 
     @Nullable
