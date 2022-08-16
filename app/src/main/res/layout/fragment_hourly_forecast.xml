@@ -12,8 +12,12 @@
         android:layout_height="wrap_content"
         android:text="Hourly Forecasts"
         android:textSize="30dp"
-        android:id="@+id/hourly_forecast_text">
+        android:id="@+id/hourly_forecast_text"/>
 
-    </TextView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hourlyForecastList"/>
+
 
 </LinearLayout>

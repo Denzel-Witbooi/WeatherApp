@@ -5,12 +5,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -26,6 +28,8 @@ public class HourlyForecastFragment extends Fragment {
 
     private TextView testTextView;
     private String BASE_URL = "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/305605";
+    ListView listView;
+    CardView cardView;
 
     @Nullable
     @Override
@@ -37,6 +41,8 @@ public class HourlyForecastFragment extends Fragment {
 
         testTextView = view.findViewById(R.id.hourly_forecast_text);
         testTextView.setText("Hourly Forecasts");
+        listView = view.findViewById(R.id.hourlyForecastList);
+        cardView = view.findViewById(R.id.hourly_forecast_cardView);
 
         URL url = NetworkUtil.buildURLForWeather(BASE_URL);
 
@@ -95,10 +101,10 @@ public class HourlyForecastFragment extends Fragment {
                         
                         forecastArrayList.add(forecastObject);
 
-//                        if (forecastArrayList != null) {
-//                            ForecastAdapter adapter = new ForecastAdapter(getContext(), forecastArrayList);
-////                            listView.setAdapter(adapter);
-//                        }
+                        if (forecastArrayList != null) {
+                            HourlyForecastAdapter adapter = new HourlyForecastAdapter(getContext(), forecastArrayList);
+                            listView.setAdapter(adapter);
+                        }
                     }
                     return forecastArrayList;
                 }
