@@ -12,14 +12,14 @@ import java.util.Scanner;
 
 public class NetworkUtil
 {
-    private static final String BASE_URL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/305605";
+    //private static final String BASE_URL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/305605";
     private static final String API_KEY = "\tcGFzAxLs8GNaTwO7AX77rPUyFnXgwphd";
     private static final String PARAM_API_KEY = "apikey";
     private static final String METRIC_PARAM = "metric";
     private static final String METRIC_VALUE = "true";
     private static final String TAG = "NETWORK_UTIL";
 
-    public static URL buildURLForWeather()
+    public static URL buildURLForWeather(String BASE_URL)
     {
         Uri uri = Uri.parse(BASE_URL)
                 .buildUpon()

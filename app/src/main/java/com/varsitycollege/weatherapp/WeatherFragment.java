@@ -29,6 +29,7 @@ public class WeatherFragment extends Fragment {
     private TextView testTextView;
     ListView listView;
     CardView cardView;
+    private String BASE_URL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/305605";
 
     @Nullable
     @Override
@@ -41,7 +42,7 @@ public class WeatherFragment extends Fragment {
         listView = view.findViewById(R.id.weatherList);
         cardView = view.findViewById(R.id.weather_cardView);
 
-        URL url = NetworkUtil.buildURLForWeather();
+        URL url = NetworkUtil.buildURLForWeather(BASE_URL);
 
         new FetchWeatherData().execute(url);
 
