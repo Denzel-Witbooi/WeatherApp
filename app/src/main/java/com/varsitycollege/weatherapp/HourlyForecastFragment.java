@@ -69,7 +69,7 @@ public class HourlyForecastFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            Log.i(TAG, "ourDATA" + hourlyForecastData);
+            Log.d(TAG, "ourDATA" + hourlyForecastData);
             return hourlyForecastData;
         }
 
@@ -96,9 +96,10 @@ public class HourlyForecastFragment extends Fragment {
 
                         // get iconPhrase
                         String iconPhrase = dailyWeather.getString("IconPhrase");
-                        Log.i(TAG, "consumeJson: iconPhrase " + iconPhrase);
+                        Log.d(TAG, "consumeJson: iconPhrase " + iconPhrase);
                         forecastObject.setIconPhrase(iconPhrase);
-                        
+
+
                         forecastArrayList.add(forecastObject);
 
                         if (forecastArrayList != null) {
